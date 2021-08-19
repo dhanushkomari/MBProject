@@ -23,7 +23,6 @@ class SingleImage(models.Model):
     vehicle_no = models.CharField(max_length=15)
 
 
-
     def __str__(self):
         return '{}'.format(self.user+" "+self.vehicle_no)
 
@@ -35,3 +34,5 @@ class SingleImage(models.Model):
     def get_url(self):
         pass
         # return reverse()
+
+    def upload_single_image(instance, self):
