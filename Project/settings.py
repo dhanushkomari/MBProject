@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+from MultiImageApp.models import SingleImage
 import os
 from pathlib import Path
 
@@ -37,6 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'accounts',
+    'AddressApp',
+    'DashboardApp',
+    'SingleImageApp',
+    'MultiImageApp',
 ]
 
 MIDDLEWARE = [
@@ -55,13 +62,11 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'accounts', 'templates'),
-            os.path.join(BASE_DIR, 'AddressApp', 'templates'),
-            os.path.join(BASE_DIR, 'DashboardApp', 'templates'),
-            os.path.join(BASE_DIR, 'SingleImageApp', 'templates'),
-            os.path.join(BASE_DIR, 'MultiImageApp', 'templates'),
-
-
+            os.path.join(BASE_DIR, 'accounts', 'templates/'),
+            os.path.join(BASE_DIR, 'AddressApp', 'templates/'),
+            os.path.join(BASE_DIR, 'DashboardApp', 'templates/'),
+            os.path.join(BASE_DIR, 'SingleImageApp', 'templates/'),
+            os.path.join(BASE_DIR, 'MultiImageApp', 'templates/'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
